@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def starting_page(request):
     return render(request, "index.html")
+
+def posts_page(request):
+    return render(request, "posts.html")
