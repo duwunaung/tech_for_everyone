@@ -13,7 +13,12 @@
   <hr />
   <section>
     <h1>Latest Post Zone</h1>
-    <h2>Show Latest Posts around 3 or 6 or something. with image</h2>
+    
+    <ul>
+      {% for blog in blogs %}
+        {% include 'includes/blog.html' %}
+      {% endfor %}
+    </ul>
   </section>
   <hr />
   <section>
