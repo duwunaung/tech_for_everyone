@@ -49,7 +49,7 @@ Clone the repository:
 
   
 
-    git clone https://github.com/your-brothers/gaming-channels-blog.git
+    git clone https://github.com/duwunaung/tech_for_everyone.git
 
     
 Navigate to the project directory:
