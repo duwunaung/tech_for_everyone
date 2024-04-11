@@ -20,5 +20,6 @@ def blogs_page(request):
 def blog_page(request, slug):
     blog = get_object_or_404(Blog, slug=slug)
     return render(request, "blog.html", {
-        "blog": blog
+        "blog": blog,
+        "tags" : blog.tags.all()
     })

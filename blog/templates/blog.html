@@ -1,20 +1,23 @@
 {% extends 'includes/base.html' %}
 
 {% block title %}
-    {{ blog.title }}
-{% endblock  %}
+  {{ blog.title }}
+{% endblock %}
 
 {% block content %}
-    <section>
-        <h2> {{ blog.title }} </h2>
-        <article>
-            By {{blog.author}}
-        </article>
-        <div>
-            Last updated on <time>{{ blog.date|date:"d M Y" }}</time>
-          </div>
-    </section>
-    <main>
-        {{ blog.content|linebreaks }}
-    </main>
-{% endblock  %}
+  <section>
+    <h2>{{ blog.title }}</h2>
+
+    {% for tag in tags %}
+      <span class="tag">({{ tag.caption }})</span>
+    {% endfor %}
+    <article>By {{ blog.author }}</article>
+    <div>
+      Last updated on <time>{{ blog.date|date:'d M Y' }}</time>
+    </div>
+  </section>
+  <main>
+    <img src="{{ blog.image.url }}" alt="" />
+    {{ blog.content|linebreaks }}
+  </main>
+{% endblock %}
