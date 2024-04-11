@@ -66,6 +66,12 @@ Run the Django development server:
 
 Access the project in your web browser at http://localhost:8000.
 
+## Screenshots
+
+![](screenshots/admin.png)
+![](screenshots/blogs.png)
+![](screenshots/detail.png)
+
 ## Contribution
 
 This project is a sample project created for personal use. Contributions are not currently being accepted. However, feel free to fork the repository and modify the project for your own purposes.
