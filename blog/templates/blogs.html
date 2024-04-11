@@ -1,16 +1,25 @@
 {% extends 'includes/base.html' %}
 
 {% block title %}
-    T4E || All Blogs
-{% endblock  %}
+  T4E || All Blogs
+{% endblock %}
+
+{% block hero %}
+  {% include 'includes/hero.html' %}
+{% endblock %}
 
 {% block content %}
-    <section>
-        Post Showing
-        <ul>
+  <section class="blog-posts">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-10 is-offset-1">
+          <div class="columns is-multiline">
             {% for blog in blogs %}
-            {% include 'includes/blog.html' %}
+              {% include 'includes/blog.html' %}
             {% endfor %}
-        </ul>
-    </section>
-{% endblock  %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

@@ -5,19 +5,40 @@
 {% endblock %}
 
 {% block content %}
-  <section>
-    <h2>{{ blog.title }}</h2>
-
-    {% for tag in tags %}
-      <span class="tag">({{ tag.caption }})</span>
-    {% endfor %}
-    <article>By {{ blog.author }}</article>
-    <div>
-      Last updated on <time>{{ blog.date|date:'d M Y' }}</time>
+  <section class="hero is-link-dark is-small">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <img src="{{ blog.image.url }}" alt="" />
+      </div>
     </div>
   </section>
-  <main>
-    <img src="{{ blog.image.url }}" alt="" />
-    {{ blog.content|linebreaks }}
-  </main>
+  <div class="container">
+    <!-- START ARTICLE FEED -->
+    <section class="articles">
+      <div class="column is-8 is-offset-2">
+        <!-- START ARTICLE -->
+        <div class="card article">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content has-text-centered">
+                <p class="title article-title">{{ blog.title }}</p>
+                <p class="subtitle is-6 article-subtitle">
+                  <a href="#">{{ blog.author }}</a> on {{ blog.date|date:'d M Y' }}
+                </p>
+
+                {% for tag in tags %}
+                  <span class="tag is-white">{{ tag.caption }}</span>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="content article-body">
+              <p>{{ blog.content|linebreaks }}</p>
+            </div>
+          </div>
+        </div>
+        <!-- END ARTICLE -->
+      </div>
+    </section>
+    <!-- END ARTICLE FEED -->
+  </div>
 {% endblock %}
